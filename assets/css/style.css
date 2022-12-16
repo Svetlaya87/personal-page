@@ -1,0 +1,101 @@
+body, .box {
+    box-sizing:border-box;
+    background-color: #ffffff ;
+}
+.container {
+    min-width: 393px;
+    background-color: #ffffff ;
+}
+
+.container{
+    padding: 8px;
+    padding-top: 0px;
+
+    /*гид не управляет самим контейнером, а только к тем элементам , котоыре внутри. т.е паддинги для краев мы задаем самостоятельно. Также , чтобы прижать футер к подвалу пишем минимальную  высоту*/
+    display: grid;
+    grid-gap:10px;
+    grid-template-columns:  1fr;
+    grid-template-rows: 5% 90% 5%;
+    
+   
+    grid-template-areas: "header"
+                         "aside"
+                         "footer";
+}
+
+header {
+    grid-area: header;
+}
+
+
+aside {
+    grid-area: aside;
+    
+}
+
+footer {
+    grid-area: footer;
+}
+
+aside {
+    overflow-y: scroll;
+}
+.aside-div {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-size: 1.5rem;
+    text-align: left;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 5px;
+    border: 2px solid #696a69; /* Grey */
+    color: black;
+    background-color: #ffffff;
+
+}
+
+
+.btn-sveta {
+
+    display:block;
+    /*width: 20;*/
+    height: auto;
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 8px;
+    padding: 5px 30px;
+    border: 2px solid #696a69; /* Grey */
+    color: black;
+    background-color: #ffffff;
+
+}
+
+.div-for-a {
+    display: flex;
+    justify-content: right;
+}
+
+
+.btn-sveta:hover {
+    border: 2px solid #4CAF50;
+    background-color: #4CAF50; /*Green*/
+    color: white;
+}
+
+@media (min-width: 992px) {
+
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .container {
+        max-width: 720px;
+    }
+}

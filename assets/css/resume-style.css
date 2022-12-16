@@ -1,0 +1,120 @@
+.container-sv {
+    
+    min-width: 393px;
+    background-color: #ffffff ;
+}
+
+.h2-sv {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 16px;/*24*/
+}
+
+.btn-sveta {
+
+    display:block;
+    /*width: 20;*/
+    height: 48px;
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 8px;
+    padding: 5px 30px;
+    border: 2px solid #696a69; /* Grey */
+    color: black;
+    background-color: #ffffff;
+
+}
+
+a, img, .hover-sv:hover, .btn-sveta:hover {
+    color: rgb(62, 62, 62);
+}
+.colorfacebook, .colorfacebook:hover {
+    color: #4267B2;
+}
+
+
+
+.container-sv{
+    padding: 8px;
+    padding-top: 0px;
+    
+    /*гид не управляет самим контейнером, а только к тем элементам , котоыре внутри. т.е паддинги для краев мы задаем самостоятельно. Также , чтобы прижать футер к подвалу пишем минимальную  высоту*/
+    display: grid;
+    grid-gap: 10px;
+    
+    grid-template-columns:  150px 1fr 1fr;
+    grid-template-rows: auto repeat(3, 30px) repeat(4, auto);
+    
+   
+    grid-template-areas: "links                 links   links"
+                         "photo                 nameSurname  nameSurname"
+                         "photo                 jobtitle     jobtitle"
+                         "photo                  contacts         contacts"
+                         
+                         "description           description   description"
+                         "history              history     history"
+                         "education             education   education"
+                         "courses               courses   courses"
+                         ;
+}
+
+x-photo {
+    grid-area: photo;
+}
+
+name-surname {
+    grid-area: nameSurname;
+}
+
+job-title {
+    grid-area: jobtitle;
+}
+
+x-contacts {
+    grid-area: contacts;
+}
+
+
+x-description {
+    grid-area: description;
+}
+
+employment-history {
+    grid-area: history;
+}
+
+x-education {
+    grid-area: education;
+}
+
+x-courses {
+    grid-area: courses;
+}
+
+header {
+    grid-area: links;
+}
+
+
+x-email{
+    justify-self: center;
+}
+
+
+@media (min-width: 992px) {
+
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .container {
+        max-width: 720px;
+    }
+}
