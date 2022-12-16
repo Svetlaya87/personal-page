@@ -13,6 +13,8 @@ h3 {
     font-size: 16px;/*24*/
 }
 
+
+
 .btn-sveta {
 
     display:block;
@@ -38,6 +40,8 @@ a, img, .hover-sv:hover, .btn-sveta:hover {
 
 
 
+
+
 .container-sv{
     padding: 8px;
     padding-top: 0px;
@@ -50,7 +54,7 @@ a, img, .hover-sv:hover, .btn-sveta:hover {
     grid-template-rows: auto repeat(3, 30px) repeat(4, auto);
     
    
-    grid-template-areas: "links                 links   links"
+    grid-template-areas: "links                 links         links"
                          "photo                 nameSurname  nameSurname"
                          "photo                 jobtitle     jobtitle"
                          "photo                  contacts         contacts"
@@ -60,6 +64,9 @@ a, img, .hover-sv:hover, .btn-sveta:hover {
                          "education             education   education"
                          "courses               courses   courses"
                          ;
+}
+header {
+    grid-area: links;
 }
 
 x-photo {
@@ -95,14 +102,10 @@ x-courses {
     grid-area: courses;
 }
 
-header {
-    grid-area: links;
-}
-
-
 x-email{
     justify-self: center;
 }
+
 
 
 @media (min-width: 992px) {
