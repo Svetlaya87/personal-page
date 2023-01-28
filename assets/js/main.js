@@ -13,6 +13,10 @@ let works = [
         'https://svetlaya87.github.io/find-and-sort-goods-9.2/',
         'https://github.com/Svetlaya87/find-and-sort-goods-9.2',
         "Write a sorting mechanism for the prices buttons  and a search mechanism for the string 'Search'. Display photos of goods."
+    ],
+    [   'https://svetlaya87.github.io/atm-homework-main/',
+        'https://github.com/Svetlaya87/atm-homework-main',
+        'You have data on the fullness of the ATM, which load from the atm-info.json file. The user enters the amount they want to get. The task of the script is to calculate what are the denominations of banknotes and their number must given to the user. For example, the amount is 3320 UAH. So the ATM should give to user 500 x 6; 200x1; 100x1; 20x1 banknotes. At the same time, it is necessary to strive for the minimum possible number of issued banknotes.There is also a limit on the total number of banknotes that the ATM can dispense (constant maxNotesLimit).'
     ]
 ];     
 
