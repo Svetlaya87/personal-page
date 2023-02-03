@@ -1,23 +1,7 @@
-let myExp = [
-    ["Фрегат", "Интернет-провайдер", '2021-2019', 'оператор контакт-центра', 
-        "Консультация абонентов по услугам компании, диагностика работы интернет-оборудования, кабеля в телефонном режиме"],
-    ["ЙогаДень", "Йога марафоны в Днепре", "2018-2014", "Со-организатор марафона",      "Поиск зала, поиск и приглашение преподавателей, создание программы марафона,      ведение страницы социальной сети, создание видео-контента, создание печатной продукции и другие организационные вопросы"],
-    [ "Самозанятость", "", "2020-2017", "организатор семинаров по йоге и здоровью",
-        "Решение организационных вопросов. Они почти такие же, как и в организации марофона"
-        
-    ]
-];
+import  {userDataUk, titlesUk, myExpUk, addEducUk, EducUk} from './modules/uk-data.js'; 
+import {userDataEn, titlesEn, myExpEn, addEducEn, EducEn} from './modules/en-data.js';
 
-//"ORT DNIPRO", "Международный образовательный центр, который обучает IT-специальностям"
-let addEduc = [
-    [ "Программирование на JavaScript, Frontend", "2021 август - май", "Синтаксис языка JavaScript, работа с элементами дерева, документа, событиями и другими аспекатми веб-страницы. Изучение технологии AJAX и робота с  WEB API (REST API). Изучение и использование на практике фреймворка Vue.js 3 "],
-    ["Основи программирования и веб-разработки: Frontend, JavaScript, HTML, CSS, Bootstrap, GitHub", "2021 апрель - 2020 декабрь", "Верстка страниц (HTML 5.2 & CSS 3). Освоение технологии CSS Grid, адаптивной верстки, Bootstrap 5. Ввод, валидация и обработка данных пользователя." ],
-    ["QA", "2021 январь - 2020 ноябрь", "Введение в тестирование и анализ требований к ПО. Методы и виды тестирования. Тестовая документация. Автоматизация тестирования."]
-]
 
-let Educ = [
-    "Днепр", "НМетАУ", "2009 июнь - 2004 сентябрь", "Специалист", "Учет и аудит"
-];
 
 let employmentHistory = document.getElementsByTagName('employment-history');
 let xCourses =          document.getElementsByTagName('x-courses');
@@ -30,6 +14,15 @@ let ulForEduc = document.createElement('ul');
 employmentHistory[0].append(ulForExp);
 xCourses[0].append(ulForCourses);
 xEduc[0].append(ulForEduc);
+
+let buttons = document.getElementsByTagName('button');
+console.log(buttons[0]['tagName']);
+
+let myExp = myExpUk;
+let addEduc = addEducUk;
+let Educ = EducUk;
+
+
 
 
 let x = myExp;
@@ -58,7 +51,7 @@ for(let i=0; i<= x.length; i++){
         li.classList.add('p-2');
 
         if (x == addEduc){
-            li.innerHTML = `<h3>${x[i][y]}</h3><p>${x[i][y+1]}</p> <p>${x[i][y+2]}</p>`;
+            li.innerHTML = `<h3>${x[i][y]}</h3><p>${x[i][y+1]}</p><p>${x[i][y+2]}</p>`;
             break;
         }
 
@@ -84,6 +77,144 @@ for(let i=0; i<= x.length; i++){
     li.classList.add('p-2');
 
     li.innerHTML = `<h3>${x[0]} | ${x[1]} </h3><p>${x[2]}</p><p>${x[3]} | ${x[4]}</p>`;
+
+
+
+    
+
+    function English() {
+
+        
+        //let nameSurname = document.querySelector('div > name-surname > p');
+        let nameSurname = document.querySelectorAll('div > * > p');
+        
+        for(let i=0; i< userDataEn.length; i++){
+            nameSurname[i].innerHTML= userDataEn[i];
+
+        }
+
+        let titles = document.querySelectorAll('div > * > h1');
+        
+        for(let i=0; i< titlesEn.length; i++){
+            titles[i].innerHTML= titlesEn[i];
+
+        }
+
+        let aSeeMyWorks = document.querySelectorAll('header > span > a > span');
+        console.log(aSeeMyWorks);
+        aSeeMyWorks[0].innerHTML = 'See my works';
+
+        let education = document.querySelectorAll('x-education > ul > li');
+        console.log(education);
+        education[0].childNodes[0].innerHTML = `${EducEn[0]} | ${EducEn[1]}`;
+        education[0].childNodes[1].innerHTML = EducEn[2];
+        education[0].childNodes[2].innerHTML = `${EducEn[3]} | ${EducEn[4]}`;
+
+        let employment  = document.querySelectorAll('employment-history > ul > li');
+        let courses = document.querySelectorAll('x-courses > ul > li');
+
+        
+        function translater(x, y){
+            
+            for(let i=0; i< x.length; i++){   
+                for(let j=0; j < x[i].childNodes.length; j++){
+                
+                    if (y == myExpEn){
+                        if (j== x[i].childNodes.length-1) {
+                            x[i].childNodes[x[i].childNodes.length-1].innerHTML = y[i][y[i].length-1];
+                        } else if( j== 0) {
+                            x[i].childNodes[j].innerHTML = `${y[i][j]} | ${y[i][j+1]}`;
+                            
+                           
+                            
+                        } else{
+                            x[i].childNodes[j].innerHTML = `${y[i][j+1]} | ${y[i][j+2]}`;
+                        }
+                    }else {
+                       
+                        x[i].childNodes[j].innerHTML = y[i][j];
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        
+        translater(employment, myExpEn );
+        translater(courses, addEducEn);
+        
+        //titlesEn
+        console.log("I'm here En");
+    }
+    
+    
+    function Ukraine() {
+    
+         //let nameSurname = document.querySelector('div > name-surname > p');
+         let nameSurname = document.querySelectorAll('div > * > p');
+        
+         for(let i=0; i< userDataEn.length; i++){
+             nameSurname[i].innerHTML= userDataUk[i];
+ 
+         }
+ 
+         let titles = document.querySelectorAll('div > * > h1');
+         
+         for(let i=0; i< titlesEn.length; i++){
+             titles[i].innerHTML= titlesUk[i];
+ 
+         }
+ 
+         let aSeeMyWorks = document.querySelectorAll('header > span > a > span');
+         console.log(aSeeMyWorks);
+         aSeeMyWorks[0].innerHTML = 'Дивитись роботи';
+ 
+         let education = document.querySelectorAll('x-education > ul > li');
+         console.log(education);
+         education[0].childNodes[0].innerHTML = `${EducUk[0]} | ${EducUk[1]}`;
+         education[0].childNodes[1].innerHTML = EducUk[2];
+         education[0].childNodes[2].innerHTML = `${EducUk[3]} | ${EducUk[4]}`;
+ 
+         let employment  = document.querySelectorAll('employment-history > ul > li');
+         let courses = document.querySelectorAll('x-courses > ul > li');
+ 
+         
+        function translater(x, y){
+            for(let i=0; i< x.length; i++){
+                for(let j=0; j < x[i].childNodes.length; j++){
+                    if (y == myExpUk){
+                        if (j== x[i].childNodes.length-1) {
+                            x[i].childNodes[x[i].childNodes.length-1].innerHTML = y[i][y[i].length-1];
+                        } else if( j== 0) {
+                            x[i].childNodes[j].innerHTML = `${y[i][j]} | ${y[i][j+1]}`;
+                            
+                           
+                            
+                        } else{
+                            x[i].childNodes[j].innerHTML = `${y[i][j+1]} | ${y[i][j+2]}`;
+                        }
+                    }else {
+                        
+                         x[i].childNodes[j].innerHTML = y[i][j];
+                    }
+                     
+                }
+            }
+        }
+         
+         
+         translater(employment, myExpUk );
+         translater(courses, addEducUk);
+         
+        
+        console.log("I'm here Uk");
+    }
+    
+    
+    buttons[1].addEventListener( 'click', English);
+    buttons[0].addEventListener( 'click', Ukraine);
     
 
 

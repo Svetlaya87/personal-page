@@ -21,7 +21,8 @@
     <script defer src="./assets/fontawesome-free-6.2.1-web/js/all.js"></script>
 
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script defer src="./assets/js/main.js"></script>
+    <script defer type='module' src="./assets/js/main.js"></script>
+
     
 
 
@@ -29,11 +30,16 @@
 </head>
 <body>
     <div class="box min-vh-100">
-        <div class="container min-vh-100">
-            <header class="p-2">
+        <div class="container">
+            <header class="p-2 d-flex flex-row">
                 <a class="btn btn-outline-secondary" href="./index.html">
                     <i class="fa-solid fa-angle-left"></i>
                 </a>
+
+                <span class='order-5 d-flex flex-row'>
+                    <button class="p-2 btn-sveta border-end-0 rounded-0 rounded-start">UK</button>
+                    <button class="p-2 btn-sveta rounded-0 rounded-end">EN</button>
+                </span>
             </header>
             <aside class="d-flex flex-column p-2">
                 
